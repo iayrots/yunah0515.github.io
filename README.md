@@ -1,57 +1,71 @@
-[![Build Status](https://travis-ci.org/torch/distro.svg?branch=master)](https://travis-ci.org/torch/distro)
+# Update 07/09/2018
 
-#### NOTE: Torch is not actively developed anymore and is in maintenance mode.
+I'm planning to refactor Leonids theme!!!
 
-Self-contained Torch installation
-============
+The goal is really simple: make documentation more intuitive and deployment simpler!!!
 
-#### Please refer to the [Torch installation guide](http://torch.ch/docs/getting-started.html#_) for details on how to make a fresh install of Torch on Linux or MacOS.
-#### If on windows with msvc, please refer to this [guide](win-files/README.md) for details on installation and usage.
+Here is the plan:
 
+| Version | Description | Date |
+| --- | --- | --- |
+| 1.1 | Jekyll version deployable with gem | 07/15/2018 |
+| 1.2 | New features: Pagination, Prev/Next post | 07/22/2018 |
+| 2.0 | Gatsby or Vuepress version (vote in Issues) | who knows... |
 
-## Repo content
-#### Dependencies
-Globally installed dependencies can be installed via:
-```bash
-bash install-deps
+As the project was and will be designed to improve your writing experience, only documentation, gem, deployment process with CI relevant PRs are acceptable in the future.
+
+I want you to know how much I value your support.
+
+Share it to your timeline!
+
+# Update 05/06/2016
+
+Important! It's better to download the gzipped files instead of forking the repo. I would really appreciate if you could give me a star. 😁
+
+This project is under MIT license, so feel free to make it your own.
+
+# Leonids Jekyll Themes
+
+**[Leonids](http://renyuanz.github.io/leonids)** is a clean Jekyll theme perfect for powering your GitHub hosted blog.
+
+## What is Leonids?
+
+* Responsive templates. Looking good on mobile, tablet, and desktop.
+* Simple and clear permalink structure.
+* Support for Disqus Comments.
+* Support for multi-authors.
+* **And** the Leonids (/ˈliːənɪdz/ lee-ə-nidz) are a prolific meteor shower associated with the comet [Tempel-Tuttle](https://en.wikipedia.org/wiki/55P/Tempel%E2%80%93Tuttle).
+
+See a [demo](http://renyuanz.github.io/leonids/) hosted on GitHub.
+
+## Quick setup
+
+```
+git clone https://github.com/renyuanz/leonids
+cd leonids
+jekyll server
 ```
 
-#### Lua and Torch
-The self-contained Lua and Torch installations are performed via:
-```bash
-./install.sh
+Check out your awesome blog at `http://localhost:4000` and Cheers!
+
+## Running with Docker
+
+```
+docker run --rm -it --volume=$PWD:/srv/jekyll -p 4000:4000 jekyll/jekyll:pages jekyll serve --watch --force_polling
 ```
 
-By default Torch will install LuaJIT 2.1. If you want other options, you can use the command:
-```bash
-# If a different version was installed, used ./clean.sh to clean it
-TORCH_LUA_VERSION=LUA51 ./install.sh
-TORCH_LUA_VERSION=LUA52 ./install.sh
-```
+## Resume Page by [@Skn0tt](https://github.com/Skn0tt)
+Leonids features a simple resume page. It is divided up into five sections:
 
-## Update
-To update your already installed distro to the latest `master` branch of `torch/distro` simply run:
-```bash
-./update.sh
-```
+* Bio (Edit \_data/index/careers.yml)
+* Education (Edit \_data/index/education.yml)
+* Skills (Edit \_data/index/skills.yml)
+* Projects (Edit \_data/index/projects.yml)
+* About (Edit \_includes/sections/about.html)
 
-## Cleaning
-To remove all the temporary compilation files you can run:
-```bash
-./clean.sh
-```
+You can put all your info into these files, and they will be featured on the resume page.
 
-To remove the installation run:
-```bash
-# Warning: this will remove your current installation
-rm -rf ./install
-```
-You may also want to remove the `torch-activate` entry from your shell start-up script (`~/.bashrc` or `~/.profile`).
+## TODO
 
-## Test
-You can test that all libraries are installed properly by running:
-```bash
-./test.sh
-```
-
-Tested on Ubuntu 14.04, CentOS/RHEL 6.3 and OSX
+- [ ] Redesign categories page. Ref: [dribbble: blog category section By Ilja Miskov](https://dribbble.com/shots/2274792-Blog-Category-Selection)
+- [ ] Multi languages support.
