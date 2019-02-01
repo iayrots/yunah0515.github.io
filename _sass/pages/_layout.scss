@@ -80,9 +80,10 @@
     display: inline-block;
     *display: inline;
     zoom: 1;
-    &:after {
-      content: '/';
-    }
+    font-size: 22px;
+    // &:after {
+    //   content: '/';
+    // }
     &:last-child:after {
       content: '';
     }
